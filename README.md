@@ -29,7 +29,7 @@ You-Flix was created as a simple user-friendly app that allows users to upload t
 ### Built With
 This is a full stack app that was built using Javascript, React, CSS, HTML and full CRUD data operations. We used Trello to organize our ideas and keep track of the steps we had to complete.
 
-![**Project 2 Trello**](images/trello.jpeg)
+![**Project 3 Trello**](images/youflix.jpeg)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
