@@ -44,7 +44,9 @@ Open application in browser or download the application and start creating a col
 
 
 ### Wireframes
-![**Project 2 wireframes**](.jpeg)
+![**Project 2 wireframes**](images/wireframe/Screenshot%202023-09-27%20163928.png)
+![**Project 2 wireframes**](images/wireframe/Screenshot%202023-09-27%20161240.png)
+![**Project 2 wireframes**](images/wireframe/Screenshot%202023-09-27%20163851.png)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
