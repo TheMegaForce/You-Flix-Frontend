@@ -44,7 +44,7 @@ Open application in browser or download the application and start creating a col
 
 
 ### Wireframes
-![**Project 2 wireframes**](.jpeg)
+![**Project 3 wireframes**](.jpeg)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
