@@ -41,10 +41,14 @@ Open application in browser or download the application and start creating a col
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### ERD
+![**Project 3 wireframes**](images/Screenshot%202023-09-27%20172833.png)
 
 
 ### Wireframes
-![**Project 3 wireframes**](.jpeg)
+![**Project 3 wireframes**](images/wireframe/Screenshot%202023-09-27%20163928.png)
+![**Project 3 wireframes**](images/wireframe/Screenshot%202023-09-27%20161240.png)
+![**Project 3 wireframes**](images/wireframe/Screenshot%202023-09-27%20163851.png)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
