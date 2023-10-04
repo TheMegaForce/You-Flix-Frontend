@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactPlayer from 'react-player'
-import { useLoaderData, useLocation } from 'react-router-dom'
+import { Navigate, useLoaderData, useLocation } from 'react-router-dom'
 import Header from '../components/Header'
 
 const Home = () => {
@@ -8,6 +8,10 @@ const Home = () => {
     const video = useLoaderData()
     const {state} = useLocation()
     const { user } = state
+
+    if (user === null) {
+        Navigate("/login")
+    }
 
     const changeVideoSize = (e) => {
         

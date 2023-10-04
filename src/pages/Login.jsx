@@ -61,6 +61,7 @@ const Login = (props) => {
         />
         <button type="submit" className='bg-red'>Login</button>
       </Form>
+      <Link to="/signup" className="link-btn">Already have an account? Login here.</Link>
     </div>
    )
  }
