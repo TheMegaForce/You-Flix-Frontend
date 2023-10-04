@@ -26,7 +26,7 @@ const Signup = (props) => {
   try {
     const res = await axios({
       method: 'post',
-      url: "http://you-flix-backend.onrender.com/users/register",
+      url: "https://you-flix-backend.onrender.com/users/register",
       data: formData,
       config: { headers: { 'Content-Type': 'multipart/form-data' }}
     })
