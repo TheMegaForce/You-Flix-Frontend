@@ -1,0 +1,23 @@
+.video {
+    padding: 10px;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.youflix {
+    font-weight: bolder;
+}
+
+.videoPlayer {
+    width: 250px;
+    height: 150px;
+}

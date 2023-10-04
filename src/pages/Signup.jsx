@@ -1,24 +1,25 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Form, Link, redirect, useLoaderData } from 'react-router-dom';
 
 const Signup = (props) => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [name, setName] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState("");
+  const users = useLoaderData()
 
-    const handleSubmit = (e) =>{
-        e.preventDefault();
+  const handleSignup = async (e) => {
+    users.push(e)
+  };
 
-    }
   return (
     <div className='auth'>
         <h2>Signup</h2>
-    <form className= "signup-page" onSubmit={handleSubmit}>
-        <input value={name} type="name" onChange={(e)=> setName(e.target.value)} placeholder= "Enter Full Name"/>
-        <input value= {email} type = "email" onChange = {(e)=> setEmail(e.target.value)}placeholder = "Username" id = "email" name = "email" />
-        <input value= {password} type="password" onChange = {(e)=> setPassword(e.target.value)} placeholder = "Password" id = "password" name = "password"/>
+    <Form className= "signup-page" onSubmit={handleSignup}>
+        <input type="name" onChange={(e)=> setName(e.target.value)} placeholder="Enter Full Name" id="name" name='name'/>
+        <input type="text" onChange={(e)=> setUsername(e.target.value)} placeholder="Username" id="username" name="username" />
+        <input type="password" onChange={(e)=> setPassword(e.target.value)} placeholder="Password" id="password" name="password"/>
         <button type="submit">Signup</button>
-     </form>
+     </Form>
      <Link to="/login" className="link-btn">Already have an account? Login here.</Link>
     </div>
   )

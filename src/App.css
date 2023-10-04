@@ -1,14 +1,14 @@
 .App {
+  min-height: 100vh;
+  background-image: linear-gradient(black, grey);
+}
+
+.auth, .login-page, .signup-page {
   text-align: center;
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(black, grey);
-  
-}
-
-.auth, .login-page, .signup-page {
   display: flex;
   flex-direction: column;
 
@@ -16,11 +16,16 @@
 
 @media screen and (min-width 600px) {
 }.auth {
-    padding: 5rem;
-    border: 3px solid black;
-    border-radius: 10px;
-    margin: 0.5rem;
-  }
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 0.5rem;
+}
   
 
 
