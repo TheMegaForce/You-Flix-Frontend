@@ -54,3 +54,38 @@ export const deleteAction = async ({params}) => {
 
     return redirect("/")
 };
+
+export const createUserAction = async ({ request }) => {
+    const formData = await request.formData()
+
+    const user = {
+        username: formData.get('username'),
+        password: formData.get('password'),
+    }
+
+    await fetch(url + '/users', {
+        method: 'post',
+        headers: {
+            "content-Type": 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+
+    return redirect('/login')
+};
+
+export const updateUser = (id, userData) => {
+    return fetch(`/api/users/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    })
+    .then(response => response.json())
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  };
+  
+

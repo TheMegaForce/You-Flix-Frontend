@@ -1,3 +1,4 @@
+//loader.js
 const url = "https://you-flix-backend.onrender.com"
 
 export const videosLoader = async () => {
@@ -23,5 +24,6 @@ export const usersLoader = async () => {
 export const usersShowLoader = async ({params}) => {
     const res = await fetch(url + "/users/" + params.id)
     const users = await res.json()
+    console.log('User Data: ', users);
     return users
 }
