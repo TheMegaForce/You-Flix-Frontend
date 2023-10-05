@@ -5,7 +5,7 @@ import axios from 'axios';
 const Signup = (props) => {
   const [formData, setFormData] = useState({
     name: '',
-    img: '',
+    image: '',
     username: '',
     password: ''
  })
@@ -24,12 +24,7 @@ const Signup = (props) => {
 
  const handleSignup = async (e) => {
   try {
-    const res = await axios({
-      method: 'post',
-      url: "https://you-flix-backend.onrender.com/users/register",
-      data: formData,
-      config: { headers: { 'Content-Type': 'multipart/form-data' }}
-    })
+    const res = await axios.post('https://you-flix-backend.onrender.com/users/register', formData);
     
     if (res.data = "success") {
       navigate('/login');
@@ -37,7 +32,7 @@ const Signup = (props) => {
       alert('Invalid credentials. Please try again.');
     }
   } catch (error) {
-    console.error(error)
+    console.error('Registration error', error.response);
   }}
 
   return (
@@ -53,9 +48,9 @@ const Signup = (props) => {
         />
         <input
           type="text"
-          name="img"
+          name="image"
           placeholder="Image Link"
-          value={formData.img}
+          value={formData.image}
           onChange={handleChange}
         />
         <input
