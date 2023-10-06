@@ -74,18 +74,24 @@ export const createUserAction = async ({ request }) => {
     return redirect('/login')
 };
 
-export const updateUser = (id, userData) => {
-    return fetch(`/api/users/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
+export const updateUser = async ({ params, request }) => {
+    const formData = await request.formData()
+
+    const user = {
+        username: formData.get('username'),
+        password: formData.get('password'),
+    }
+
+    await fetch(url + '/users/' + params.id, {
+        method: 'put',
+        headers: {
+            "content-Type": 'application/json'
+        },
+        body: JSON.stringify(user)
     })
-    .then(response => response.json())
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  };
-  
+
+    return redirect(`/`)
+}
+
+
 

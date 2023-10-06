@@ -23,7 +23,7 @@ const router = createBrowserRouter(
             <Route path='update/:id' action={updateAction} />
             <Route path='delete/:id' action={deleteAction}/>
             <Route path='users/:id' element={<UserProfile />} loader={usersShowLoader} />
-            <Route path='edit/:id' element={<EditUser />} action={updateUser} />
+            <Route path='edit/:id' element={<EditUser />} loader={usersLoader} action={updateUser} />
         </Route>
     )
 )
