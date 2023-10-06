@@ -58,4 +58,53 @@ h2 {
   color: lightgray;
 }
 
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: linear-gradient(black, grey);
+  color: lightgray;
+  padding: 2rem;
+}
+
+.profile img {
+  max-width: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.profile h2 {
+  margin-bottom: 1rem;
+}
+
+.profile h3 {
+  margin: 0.5rem 0;
+}
+
+.link-button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border: none;
+  background-color: lightgray;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.link-btn:hover {
+  background-color: darkgray;
+}
+
+@media screen and (min-width: 600px) {
+  .profile {
+      border: 3px solid black;
+      border-radius: 10px;
+      margin: 2rem;
+      padding: 3rem;
+  }
+}
+
 
