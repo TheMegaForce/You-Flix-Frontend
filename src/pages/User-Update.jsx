@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Axios from "axios"
 //import { useLoaderData, Form } from 'react-router-dom'
 
 const Update = ({ post, onDelete = () => {} }) => {
@@ -6,7 +7,7 @@ const Update = ({ post, onDelete = () => {} }) => {
     const [editedTitle, setEditedTitle] = useState(post ? post.title : " ");
     const [editedDescription, setEditDescription] = useState(post ? post.description : " ");
 
-    const handleEditClick = () => {
+    const handleEditClick = async () => {
         setIsEditing(true);
     };
 
@@ -58,4 +59,4 @@ const Update = ({ post, onDelete = () => {} }) => {
   )
 }
 
-export default Update
+export default User-Update
