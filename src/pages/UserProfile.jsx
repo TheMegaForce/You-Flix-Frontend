@@ -51,9 +51,11 @@
 
 // export default UserProfile;
 
-
+//UserProfile.jsx
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+
+
 
 
 const UserProfile = () => {
@@ -96,12 +98,10 @@ useEffect(() => {
             <img src={user.image} alt={user.name} />
             <h3>Username: {user.username}</h3>
             <h3>Name: {user.name}</h3>
-    <Link to={`/edit/user:id`} className="link-btn">
-    Edit Profile
-</Link>
-
+            <Link to={`/edit/${id}`} className="link-button">
+                Edit Profile
+            </Link>
         </div>
-
     );
 };
 
