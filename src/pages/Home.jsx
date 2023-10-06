@@ -13,6 +13,7 @@ const Home = () => {
         Navigate("/login")
     }
 
+  
     const [clickedPlayerInfo, setClickedPlayerInfo] = useState(null);
 
     const handlePlayerStart = (url) => {
@@ -24,6 +25,7 @@ const Home = () => {
             console.log(clickedPlayerInfo);
         }
     };
+  
 
     return (
         <div>
