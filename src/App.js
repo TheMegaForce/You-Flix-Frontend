@@ -1,24 +1,13 @@
-import { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Update from './pages/Update';
+import './lookGood.css';
+import { Link, Outlet } from 'react-router-dom'
+
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("login");
-
-  const togglePage = (pageName)=> {
-    setCurrentPage(pageName);
-  }
-
   return (
     <div className="App">
-      {
-        currentPage === "login" ? <Login onPageSwitch={togglePage}/> : <Signup onPageSwitch={togglePage}/>
-      
-      }
-        <Update/>
+      <Outlet/>
+      {/* <Link to={"/home"} className='flex justify-self-center text-center fixed top-[50%] left-[46%] text-sky-500 font-extrabold'>Link to Home</Link> */}
     </div>
   );
 }
