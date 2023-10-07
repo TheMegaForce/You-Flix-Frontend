@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Form, Link, useLoaderData, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const Signup = (props) => {
+const VideoPost = (props) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -24,11 +24,11 @@ const Signup = (props) => {
  const handleVideoPost = async (e) => {
   try {
     const res = await axios.post('https://you-flix-backend.onrender.com/videos/', formData);
+    console.log(formData.url);
+    console.log(res.data);
     
-    if (res.data = "success") {
-        const postedVideo = formData.url
-        const foundVideo = videos.find((e) => e.url = postedVideo)
-        navigate('/videos/' + foundVideo._id);
+    if (res.data) {
+        navigate('/video/' + res.data._id);
     } else {
         alert('Invalid credentials. Please try again.');
     }
@@ -63,9 +63,9 @@ const Signup = (props) => {
         />
         <button type="submit" className='text-sky-500 border-solid border-2 hover:animate-pulse'>Post Video</button>
       </Form>
-     <Link to="/login" className="link-btn">Already have an account? Login here.</Link>
+      <Link to={"/home"}>Back to home</Link>
     </div>
   )
 }
 
-export default Signup
+export default VideoPost

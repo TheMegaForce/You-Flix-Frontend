@@ -26,7 +26,7 @@ const Signup = (props) => {
   try {
     const res = await axios.post('https://you-flix-backend.onrender.com/users/register', formData);
     
-    if (res.data = "success") {
+    if (res.data) {
       navigate('/login');
     } else {
       alert('Invalid credentials. Please try again.');

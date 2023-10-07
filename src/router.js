@@ -1,11 +1,7 @@
 import {
-    BrowserRouter as Router,
-    Redirect,
-    Switch,
     createBrowserRouter,
     createRoutesFromElements,
     Route,
-    Navigate,
 } from 'react-router-dom';
 import App from './App'
 import { videosLoader, videoShowLoader, usersLoader, usersShowLoader } from "./loader"

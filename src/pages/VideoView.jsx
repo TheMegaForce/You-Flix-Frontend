@@ -48,6 +48,7 @@ const VideoView = () => {
             <Link to={`/video/edit/${id}`} className="link-button">
                 Edit Video
             </Link>
+            <Link to={"/home"} className="link-button">Back to home</Link>
         </div>
     );
 };

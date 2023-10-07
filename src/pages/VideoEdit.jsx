@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import axios from 'axios';
 
@@ -85,7 +85,6 @@ const VideoEdit = () => {
 
   return (
     <div className='text-sky-500 auth'>
-        <Header />
       <form onSubmit={handleSubmit} encType='multipart/form-data'>
           <div>
           <label htmlFor="url">Url: </label>
@@ -117,10 +116,12 @@ const VideoEdit = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className='text-sky-500 border-solid border-2 hover:animate-pulse'>Update</button>
+        <button type="submit" className='text-sky-500 border-solid border-2 hover:animate-pulse'>Update Video</button>
       </form>
       <br/>
-      <button onClick={handleDelete}>Delete User</button>
+      <button onClick={handleDelete}>Delete Video</button>
+      <br/>
+      <Link to={"/home"}>Back to home</Link>
     </div>
   );
 };

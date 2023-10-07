@@ -121,6 +121,8 @@ const EditUser = () => {
         <button type="submit" className='text-sky-500 border-solid border-2 hover:animate-pulse'>Update</button>
       </form>
       <button onClick={handleDelete}>Delete User</button>
+      <br/>
+      <Link to={"/home"} className="link-button">Back to home</Link>
     </div>
   );
 };
