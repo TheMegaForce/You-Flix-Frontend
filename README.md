@@ -1,5 +1,8 @@
 # YOU-FLIX
 
+Deployed Frontend: https://you-flix-frontend.onrender.com
+Deployed Backend: https://you-flix-backend.onrender.com
+
 In this group project, we used REACT ROUTER to create the frontend of the application. 
 
 

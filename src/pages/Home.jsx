@@ -9,15 +9,13 @@ const Home = () => {
 
     const [style, setStyle] = useState("videoPlayer")
     const video = useLoaderData()
-    const { state } = useLocation()
-    const { user } = state
 
     const [clickedPlayerInfo, setClickedPlayerInfo] = useState(null);
 
 
     return (
         <div>
-            <Header user={user}/>
+            <Header/>
             <br />
             <div className='home'>
                 {video.map((v) => (
