@@ -32,13 +32,14 @@ const Signup = (props) => {
       alert('Invalid credentials. Please try again.');
     }
   } catch (error) {
-    console.error('Registration error', error.response);
+    alert(error.response.data.message)
+    console.error('Registration error: ', error.response.data.message);
   }}
 
   return (
    <div className="auth">
       <h2>Signup</h2>
-      <Form onSubmit={handleSignup} className='signup-page'>
+      <Form onSubmit={handleSignup} className='flex flex-col'>
       <input
           type="text"
           name="name"
@@ -67,8 +68,9 @@ const Signup = (props) => {
           value={formData.password}
           onChange={handleChange}
         />
-        <button type="submit" className='bg-red'>Signup</button>
+        <button type="submit" className='text-sky-500 border-solid border-2 hover:animate-pulse'>Signup</button>
       </Form>
+      <br/>
      <Link to="/login" className="link-btn">Already have an account? Login here.</Link>
     </div>
   )

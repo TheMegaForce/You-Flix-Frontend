@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+@keyframes lefttoright {
+    from {
+        translate: -100%;
+    }
+    
+    to {
+        translate: 0%;
+    }
+}
+
+* {
+    font-family: 'Young Serif', serif;
+}
+
+
+#intro {
+    animation-name: lefttoright;
+    animation-duration: 3s;
+}
+
+
+
 .video {
     padding: 10px;
 }

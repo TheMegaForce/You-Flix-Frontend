@@ -94,6 +94,27 @@ export const updateUser = async ({ params, request }) => {
     return redirect(`/`)
 }
 
+export const updateVideo = async ({ params, request }) => {
+    const formData = await request.formData()
+
+    const user = {
+        url: formData.get('url'),
+        title: formData.get('title'),
+        description: formData.get('description'),
+
+    }
+
+    await fetch(url + '/video/' + params.id, {
+        method: 'put',
+        headers: {
+            "content-Type": 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+
+    return redirect(`/`)
+}
+
 export const deleteUserAction = async ({ params }) => {
     try {
         const response = await fetch(url + '/users/' + params.id, {

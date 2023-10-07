@@ -10,7 +10,7 @@ const Header = (props) => {
             <div>
                 <Link to={"/home"} className='youflix'>You-Flix</Link>
             </div>
-            <h1>Welcome {user.name}</h1>
+                <Link to={"/users/" + user._id}>Welcome {user.name}</Link>
         </div>
     )
 }

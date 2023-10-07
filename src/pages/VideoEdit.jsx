@@ -1,35 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
+import axios from 'axios';
 
-const EditUser = () => {
-  const [user, setUser] = useState(null);
+const VideoEdit = () => {
+  const [video, setVideo] = useState(null);
   const [formData, setFormData] = useState({
-    image: '',
-    username: '',
-    name: '',
+    url: '',
+    title: '',
+    description: '',
   });
   const { id } = useParams();
   const navigate = useNavigate();
-  const apiUrl = `https://you-flix-backend.onrender.com/users/${id}`;
+  const apiUrl = 'https://you-flix-backend.onrender.com/videos/' + id;
 
   useEffect(() => {
-    fetch(apiUrl)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setUser(data);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(apiUrl);
+        const data = response.data;
+        setVideo(data);
         setFormData({
-          image: data.image,
-          username: data.username,
-          name: data.name,
+          url: data.url,
+          title: data.title,
+          description: data.description,
         });
-      })
-      .catch((error) => console.error('Error:', error));
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    fetchData();
   }, [apiUrl]);
 
   const handleChange = (event) => {
@@ -41,30 +41,30 @@ const EditUser = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateUser(apiUrl, formData, navigate);
+    updateVideo(apiUrl, formData, navigate);
   };
 
-  const updateUser = async (apiUrl, userData, navigate) => {
+  const updateVideo = async (apiUrl, videoData, navigate) => {
     try {
       const response = await fetch(apiUrl, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(userData),
+        body: JSON.stringify(videoData),
       });
 
       if (!response.ok) throw new Error('Network response was not ok');
 
       await response.json();
-      navigate(`/users/${id}`);
+      navigate(`/video/${id}`);
     } catch (error) {
       console.error('Error:', error);
     }
   };
 
   const handleDelete = async () => {
-    if (window.confirm('Are you sure you want to delete this user?')) {
+    if (window.confirm('Are you sure you want to delete this video?')) {
       try {
         const response = await fetch(apiUrl, {
           method: 'DELETE',
@@ -79,50 +79,50 @@ const EditUser = () => {
     }
   };
 
-  if (!user) {
+  if (!video) {
     return <p>Loading...</p>;
   }
 
   return (
-    <div className='text-sky-500'>
-      <Header/>
+    <div className='text-sky-500 auth'>
+        <Header />
       <form onSubmit={handleSubmit} encType='multipart/form-data'>
           <div>
-          <label htmlFor="image">Image:</label>
+          <label htmlFor="url">Url: </label>
           <input
             type="text"
-            id="image"
-            name="image"
-            value={formData.image}
+            id="url"
+            name="url"
+            value={formData.url}
             onChange={handleChange}
           />
         </div>
         <div>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="title">Title: </label>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={formData.username}
+            id="title"
+            name="title"
+            value={formData.title}
             onChange={handleChange}
           />
         </div>
         <div>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="description">Description: </label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
+            id="description"
+            name="description"
+            value={formData.description}
             onChange={handleChange}
           />
         </div>
-        {/* Add other fields as necessary */}
         <button type="submit" className='text-sky-500 border-solid border-2 hover:animate-pulse'>Update</button>
       </form>
+      <br/>
       <button onClick={handleDelete}>Delete User</button>
     </div>
   );
 };
 
-export default EditUser;
+export default VideoEdit;
