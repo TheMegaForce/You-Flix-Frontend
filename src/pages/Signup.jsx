@@ -32,7 +32,8 @@ const Signup = (props) => {
       alert('Invalid credentials. Please try again.');
     }
   } catch (error) {
-    console.error('Registration error', error.response);
+    alert(error.response.data.message)
+    console.error('Registration error: ',error , error.response.data.message);
   }}
 
   return (

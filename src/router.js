@@ -9,6 +9,14 @@ import { createAction, deleteAction, updateAction } from "./action"
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
+import UserProfile from './pages/UserProfile';
+import EditUser from './pages/EditUser';
+import VideoPost from './pages/VideoPost';
+import VideoView from './pages/VideoView';
+import VideoEdit from './pages/VideoEdit';
+import Intro from './pages/Intro';
+import Header from './components/Header';
+
 
 const router = createBrowserRouter(
     createRoutesFromElements(

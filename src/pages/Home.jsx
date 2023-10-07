@@ -2,32 +2,21 @@ import React, { useState } from 'react'
 import ReactPlayer from 'react-player'
 import { Navigate, useLoaderData, useLocation } from 'react-router-dom'
 import Header from '../components/Header'
+import Cookies from 'universal-cookie'
 
 const Home = () => {
+
+    const cookies = new Cookies()
+    const navigate = useNavigate()
+
     const [style, setStyle] = useState("videoPlayer")
     const video = useLoaderData()
     const {state} = useLocation()
     const { user } = state
 
-    if (user === null) {
-        Navigate("/login")
-    }
-
-    const [clickedPlayerInfo, setClickedPlayerInfo] = useState(null);
-
-    const handlePlayerStart = (url) => {
-        // Find the video object based on the URL or any other unique identifier
-        const clickedVideo = video.find(video => video.url === url);
-
-        if (clickedVideo) {
-            setClickedPlayerInfo(clickedVideo);
-            console.log(clickedPlayerInfo);
-        }
-    };
-
     return (
         <div>
-            <Header user={user}/>
+            <Header />
             <br />
             <div className='home'>
                 {video.map((v) => (

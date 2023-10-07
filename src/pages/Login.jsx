@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import { Form, Link, useLoaderData, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Cookies from 'universal-cookie'
  
 const Login = (props) => {
+   const cookies = new Cookies();
+
    const [formData, setFormData] = useState({
       username: '',
       password: ''
@@ -32,6 +35,7 @@ const Login = (props) => {
          if (res.data = "success") {
             const formUser = formData.username
             const foundUser = user.find((e) => e.username == formUser);
+            cookies.set("id", foundUser._id, { path: '/' })
             navigate('/home', { state: { user: foundUser } });
           } else {
             alert('Invalid credentials. Please try again.');
