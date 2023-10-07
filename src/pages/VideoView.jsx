@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
 import { Link, useParams } from "react-router-dom";
 
-const UserProfile = () => {
+const VideoView = () => {
     const { id } = useParams();
-    const [user, setUser] = useState(null);
+    const [video, setvideo] = useState(null);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const apiUrl = `https://you-flix-backend.onrender.com/users/${id}`;
+        const apiUrl = `https://you-flix-backend.onrender.com/videos/${id}`;
         fetch(apiUrl)
             .then((res) => {
                 if (!res.ok) {
@@ -16,7 +17,7 @@ const UserProfile = () => {
                 return res.json();
             })
             .then((data) => {
-                setUser(data);
+                setvideo(data);
             })
             
             .catch((error) => {
@@ -26,26 +27,29 @@ const UserProfile = () => {
 
 
     if (error) {
-        return <p>Error loading user: {error.message}</p>;
+        return <p>Error loading video: {error.message}</p>;
     }
 
-    if (!user) {
+    if (!video) {
         return <p>Loading...</p>;
     }
 
     return (
         <div className="profile">
-            <h2>Profile</h2>
-            <img src={user.image} alt={user.name} />
-            <h3>Username: {user.username}</h3>
-            <h3>Name: {user.name}</h3>
-            <Link to={`/edit/${id}`} className="link-button">
-                Edit Profile
+            <ReactPlayer
+                url={video.url}
+                width={"250px"}
+                height={"150px"}
+                light
+                showPreview
+            />
+            <h3>Title: {video.title}</h3>
+            <h3>Description: {video.description}</h3>
+            <Link to={`/video/edit/${id}`} className="link-button">
+                Edit Video
             </Link>
-            <br />
-            <Link to={"/home"} className="link-button">Back to home</Link>
         </div>
     );
 };
 
-export default UserProfile;
+export default VideoView;

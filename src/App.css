@@ -11,20 +11,17 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-
 }
 
-@media screen and (min-width 600px) {
+@media screen and (min-width: 600px) {
+  
 }.auth {
   text-align: center;
   display: flex;
-  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  padding: 5rem;
   border: 3px solid black;
   border-radius: 10px;
-  margin: 0.5rem;
 }
   
 

@@ -27,14 +27,14 @@ Table of Contents
 You-Flix was created as a simple user-friendly app that allows users to upload their videos. This app allows users to create a profile that keeps track of their uploaded videos. In their profile, they can create, delete or update any of their videos.
 
 ### Built With
-This is a full stack app that was built using Javascript, React, CSS, HTML and full CRUD data operations. We used Trello to organize our ideas and keep track of the steps we had to complete.
+This is a full stack app built using Javascript, React, CSS, HTML and full CRUD data operations. We use Trello to organize our ideas and keep track of the steps we have to complete.
 
 ![**Project 3 Trello**](images/youflix.jpeg)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Approach Taken
-In the frontend of the project, we set up the components and pages folders. Within these folders, we set up files that allowed us to create different pages that allowed users to navigate through the app. We also added styling to make the app looking appealing to the user. 
+In the frontend of the project, we have set up the components and pages folders. Within these folders, we have created files that allow us to create different pages, enabling users to navigate through the app. We have also added styling to make the app look appealing to the user.
 
 ### Installation 
 Open application in browser or download the application and start creating a collection of videos.

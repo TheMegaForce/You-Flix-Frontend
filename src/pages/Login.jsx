@@ -59,9 +59,9 @@ const Login = (props) => {
           value={formData.password}
           onChange={handleChange}
         />
-        <button type="submit" className='bg-red'>Login</button>
+        <button type="submit" className='text-sky-500 border-solid border-2 hover:animate-pulse'>Login</button>
       </Form>
-      <Link to="/signup" className="link-btn">Already have an account? Login here.</Link>
+      <Link to="/signup" className="link-btn text-sky-500">Need a new account? Signup here.</Link>
     </div>
    )
  }
